@@ -18,5 +18,12 @@ def sptext():
             print("Not Understand")
 
 
-def speechtx():
+def speechtx(x):
     engine = pyttsx3.init()
+    voices = engine.getProperty('voices')
+    engine.setProperty('voices', voices[0].id)
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate',150)
+    engine.say(x)
+    engine.runAndWait()
+speechtx("hello guyzz")
